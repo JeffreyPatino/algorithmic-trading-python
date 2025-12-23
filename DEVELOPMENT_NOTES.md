@@ -135,7 +135,10 @@ References
 - NumPy issue: https://github.com/numpy/numpy/issues/14860
 - CPython `secrets.py` (example): https://github.com/python/cpython/blob/3.7/Lib/secrets.py
 
-# LEFT OFF AT 1:20:00
+###### API Rate Limiting
+- The Finnhub Stock API free tier has a rate limit of 60 requests per minute. Reference: [Finnhub Pricing](https://finnhub.io/pricing).
+- To avoid exceeding this limit, a 1-second delay (`time.sleep(1)`) was added between API calls when iterating through the list of stocks.
+- This ensures compliance with the rate limit and prevents the API from returning errors due to excessive requests.
 
 ### 4. Project 2: Quantitative Momentum Screener
 Momentum investing means investing in assets that have increased in price the most.
@@ -149,6 +152,8 @@ Imagine that you have the choice between investing in two stocks that have had t
 A momentum investing strategy would suggest investing in Apple because of its higher recent price return.
 
 There are many other nuances to momentum investing strategies that we will explore throughout this course.
+
+# LEFT OFF AT 1:38:42
 
 ### 5. Project 3: Quantitative Value Screener
 Value investing means investing in stocks that are trading below their perceived intrinsic value.
