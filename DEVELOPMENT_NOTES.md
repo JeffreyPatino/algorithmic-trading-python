@@ -153,7 +153,18 @@ A momentum investing strategy would suggest investing in Apple because of its hi
 
 There are many other nuances to momentum investing strategies that we will explore throughout this course.
 
-# LEFT OFF AT 1:38:42
+##### My Notes:
+### 4. Project 2: Quantitative Momentum Screener
+
+#### API Provider Notes
+- **IEX Cloud Decommissioned**: The IEX Cloud API, originally used in the course, has been decommissioned. As a result, I switched to the **Finnhub Stock API** for retrieving stock data.
+  - Reference: [IEX Cloud Announcement](https://iexcloud.io/).
+- **Finnhub API Limitations**:
+  - **No Batch Requests**: Unlike IEX, Finnhub does not support batch requests for retrieving data for multiple stocks at once. This required sending individual API requests for each stock in the dataset.
+  - **Rate Limiting**: The free tier of Finnhub allows up to **60 requests per minute**. To comply with this limit, I added a `time.sleep(1)` delay between requests to avoid exceeding the rate limit.
+- **Endpoints Used**:
+  - **Quote Data**: `https://finnhub.io/api/v1/quote?symbol={SYMBOL}&token=...`
+  - **Financial Metrics**: `https://finnhub.io/api/v1/stock/metric?symbol={SYMBOL}&metric=all&token=...`
 
 ### 5. Project 3: Quantitative Value Screener
 Value investing means investing in stocks that are trading below their perceived intrinsic value.
@@ -172,4 +183,6 @@ Each of the individual multiples used by value investors has its pros and cons.
 One way to minimize the impact of any specific multiple is by using a composite.
 
 We'll use a composite of 5 different valuation metrics in our strategy.
+
+# LEFT OFF AT 2:54:52
 
