@@ -1,4 +1,4 @@
-# Development Notes - Algorithmic Trading using Python
+# Development Notes - Algorithmic Trading using Python (https://www.youtube.com/watch?v=xfzGZB4HhEE)
 
 ## Course Overview
 
