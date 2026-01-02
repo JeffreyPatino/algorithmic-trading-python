@@ -184,5 +184,5 @@ One way to minimize the impact of any specific multiple is by using a composite.
 
 We'll use a composite of 5 different valuation metrics in our strategy.
 
-# LEFT OFF AT 2:54:52
+# LEFT OFF AT 3:25:52
 
