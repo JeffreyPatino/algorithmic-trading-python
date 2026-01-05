@@ -1,5 +1,17 @@
 # Development Notes - Algorithmic Trading using Python (https://www.youtube.com/watch?v=xfzGZB4HhEE)
 
+## General Development Practices & Lessons Learned
+
+- **Avoid Deprecated Methods**: The course uses `DataFrame.append()`, which is deprecated. Use `pd.concat()` or build lists and convert to DataFrame at the end.
+- **API Error Handling**: Always add `try/except` blocks for API calls to handle errors gracefully and avoid breaking the script.
+- **Rate Limiting**: Respect API rate limits using `time.sleep()` between requests.
+- **Sensitive Data**: Never commit API keys or secrets to version control. Use `.env` files or environment variables for sensitive information.
+- **Finnhub API Limitations**: Finnhub does not support batch requests, so you must loop through tickers individually.
+- **Data Cleaning**: Prefer dropping rows with missing/invalid data over imputation for financial metrics.
+- **Vectorized Operations**: Use pandas’ vectorized methods for calculations (e.g., percentiles) for efficiency.
+- **Excel Formatting**: Use XlsxWriter for custom Excel output, but only print column names, not format objects.
+
+---
 ## Course Overview
 
 ### 1. Algorithmic Trading Basics
@@ -184,5 +196,13 @@ One way to minimize the impact of any specific multiple is by using a composite.
 
 We'll use a composite of 5 different valuation metrics in our strategy.
 
-# LEFT OFF AT 4:08:14
+##### My Notes:
+###### Data Cleaning Approach
+- **Dropping N/A Rows vs. Imputation**:  
+  The course suggests replacing missing data with the average of the column. I am **not a fan of this approach** and will not use it, as it can introduce bias and inaccuracies.  
+  Instead, I am **dropping rows with N/A values** to ensure the data remains reliable.
 
+###### Percentile Calculation Optimization
+- **Vectorized Percentiles with Pandas**:  
+  Rather than looping through each row to assign percentile scores, I compute percentiles **vectorially** using pandas’ built-in functions.  
+  This is more efficient and concise, operating on entire columns at once.
