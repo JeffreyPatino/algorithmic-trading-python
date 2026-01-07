@@ -1,9 +1,14 @@
 # Algorithmic Trading in Python
 
-This repository
+## Course Video
+- YouTube: https://www.youtube.com/watch?v=xfzGZB4HhEE
+
+## Repository Structure
+- `starter_files/`: Instructor-provided notebooks with blank/partial code that I completed during the course.
+- `finished_files/`: Instructor-provided reference notebooks (already completed) for comparison.
+- `DEVELOPMENT_NOTES.md`: My running notes on decisions, fixes, API changes, and lessons learned (e.g., Finnhub vs IEX, rate limiting, vectorization, data cleaning choices).
 
 ## Course Outline
-
 * Section 1: Algorithmic Trading Fundamentals
   * What is Algorithmic Trading?
   * The Differences Between Real-World Algorithmic Trading and This Course
